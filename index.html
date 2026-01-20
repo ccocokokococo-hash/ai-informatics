@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI–Informatics (8–11)</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <div class="brand__logo">AI</div>
+        <div class="brand__text">
+          <div class="brand__title">AI–Informatics</div>
+          <div class="brand__sub">Дербестендірілген оқыту • 8–11 сынып</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav__btn" data-route="home">Басты бет</button>
+        <button class="nav__btn" data-route="diagnostic">Диагностика</button>
+        <button class="nav__btn" data-route="path">Траектория</button>
+        <button class="nav__btn" data-route="assistant">AI-ассистент</button>
+        <button class="nav__btn" data-route="teacher">Мұғалім</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page" id="page-home">
+      <div class="hero card">
+        <div class="hero__left">
+          <h1>«Жасанды интеллект көмегімен дербестендірілген оқыту: информатика сабағындағы мүмкіндіктер»</h1>
+          <p class="muted">
+            Оқушы тест тапсырады → жүйе ұпайын есептейді → деңгейді анықтайды → ұсыныс береді → AI-ассистент көмектеседі.
+          </p>
+
+          <div class="kpis">
+            <div class="kpi">
+              <div class="kpi__num">1</div>
+              <div class="kpi__txt"><b>Диагностика</b><span>Сайттың ішінде тест</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__num">2</div>
+              <div class="kpi__txt"><b>Бейімдеу</b><span>Нәтижеге қарай деңгей</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__num">3</div>
+              <div class="kpi__txt"><b>AI-ассистент</b><span>Embed чатбот</span></div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn--primary" data-route="diagnostic">Оқуды бастау</button>
+            <button class="btn" data-route="assistant">AI-ассистент</button>
+          </div>
+
+          <div class="note">Дайын өнім дәлелі: тест → ұпай → деңгей → ұсыныс → чатбот.</div>
+        </div>
+
+        <div class="hero__right">
+          <div class="mock card--soft">
+            <div class="mock__title">Өнімнің жұмысы</div>
+            <ol class="mock__list">
+              <li>Оқушы тест тапсырады</li>
+              <li>Жүйе ұпайын есептейді</li>
+              <li>Деңгейді анықтайды</li>
+              <li>Тапсырма/ұсыныс береді</li>
+              <li>AI-ассистент көмектеседі</li>
+            </ol>
+            <div class="mock__pill">8–11 сынып • Бір платформа</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-diagnostic">
+      <div class="card">
+        <div class="head">
+          <h2>Диагностика тесті</h2>
+          <p class="muted">10 сұрақ. Нәтиже бойынша деңгей ұсынылады.</p>
+        </div>
+
+        <div id="quizBox" class="quiz"></div>
+
+        <div class="quiz__footer">
+          <button class="btn btn--ghost" id="resetQuiz">Тестті қайта бастау</button>
+          <button class="btn btn--primary" id="finishQuiz">Нәтижені шығару</button>
+        </div>
+
+        <div class="result card--soft" id="resultBox" hidden>
+          <div class="result__left">
+            <div class="result__score">
+              <div class="pill">Ұпай</div>
+              <div class="scoreNum" id="scoreNum">0/10</div>
+            </div>
+            <div class="result__level">
+              <div class="pill">Деңгей</div>
+              <div class="levelText" id="levelText">—</div>
+            </div>
+          </div>
+
+          <div class="result__right">
+            <div class="pill">AI-ұсыныс</div>
+            <p id="adviceText" class="advice"></p>
+            <div class="actions">
+              <button class="btn btn--primary" data-route="path">Траектория</button>
+              <button class="btn" data-route="assistant">AI-ассистент</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-path">
+      <div class="card">
+        <div class="head">
+          <h2>Жеке оқу траекториясы</h2>
+          <p class="muted">Деңгей диагностика нәтижесінен алынады.</p>
+        </div>
+
+        <div class="pathTop card--soft">
+          <div>
+            <div class="pill">Сіздің деңгейіңіз</div>
+            <div class="big" id="pathLevel">—</div>
+          </div>
+          <div>
+            <div class="pill">Ұсыныс</div>
+            <div class="big small" id="pathAdvice">—</div>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="tile">
+            <h3>Жеңіл</h3>
+            <p class="muted">Айнымалы, шарт, цикл.</p>
+            <ul class="list"><li>Жұп/тақ</li><li>1..N қосынды</li><li>Қарапайым цикл</li></ul>
+          </div>
+          <div class="tile">
+            <h3>Орта</h3>
+            <p class="muted">Функция, тізім, логика.</p>
+            <ul class="list"><li>Максимум</li><li>Жиілік санау</li><li>Комбо есеп</li></ul>
+          </div>
+          <div class="tile">
+            <h3>Қиын</h3>
+            <p class="muted">Алгоритм, құрылым, жоба.</p>
+            <ul class="list"><li>Сұрыптау</li><li>Екі көрсеткіш</li><li>Мини-жоба</li></ul>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" data-route="diagnostic">Тест</button>
+          <button class="btn btn--primary" data-route="assistant">AI-ассистент</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-assistant">
+      <div class="card">
+        <div class="head">
+          <h2>AI-ассистент (робот)</h2>
+          <p class="muted">Iframe шықпаса — “Жаңа бетте ашу” батырмасын басыңыз.</p>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn--primary" id="assistantOpen" href="#" target="_blank" rel="noopener">Чатты жаңа бетте ашу</a>
+          <button class="btn" id="assistantReload">Қайта жүктеу</button>
+        </div>
+
+        <div class="iframeWrap">
+          <iframe id="assistantFrame" title="AI Assistant" loading="lazy"></iframe>
+        </div>
+
+        <div class="note">Ең сенімді тәсіл: iframe + backup батырма.</div>
+      </div>
+    </section>
+
+    <section class="page" id="page-teacher">
+      <div class="card">
+        <div class="head">
+          <h2>Мұғалім панелі (демо)</h2>
+          <p class="muted">Соңғы нәтиже браузерде сақталады.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="tile"><div class="pill">Соңғы ұпай</div><div class="big" id="tScore">—</div></div>
+          <div class="tile"><div class="pill">Деңгей</div><div class="big" id="tLevel">—</div></div>
+          <div class="tile"><div class="pill">Ұсыныс</div><div class="big small" id="tAdvice">—</div></div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn--ghost" id="clearData">Тазалау</button>
+          <button class="btn btn--primary" data-route="diagnostic">Диагностика</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner"><div class="muted">© AI–Informatics Prototype</div></div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
